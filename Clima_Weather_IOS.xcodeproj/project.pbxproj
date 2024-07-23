@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		695583FC2C5028C600A35AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695583FB2C5028C600A35AE3 /* AppDelegate.swift */; };
 		695583FE2C5028C600A35AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695583FD2C5028C600A35AE3 /* SceneDelegate.swift */; };
-		695584002C5028C600A35AE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695583FF2C5028C600A35AE3 /* ViewController.swift */; };
 		695584032C5028C600A35AE3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 695584022C5028C600A35AE3 /* Base */; };
 		695584052C5028C700A35AE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 695584042C5028C700A35AE3 /* Assets.xcassets */; };
 		695584082C5028C700A35AE3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 695584072C5028C700A35AE3 /* Base */; };
 		695584132C5028C700A35AE3 /* Clima_Weather_IOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695584122C5028C700A35AE3 /* Clima_Weather_IOSTests.swift */; };
 		6955841D2C5028C700A35AE3 /* Clima_Weather_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6955841C2C5028C700A35AE3 /* Clima_Weather_IOSUITests.swift */; };
 		6955841F2C5028C700A35AE3 /* Clima_Weather_IOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6955841E2C5028C700A35AE3 /* Clima_Weather_IOSUITestsLaunchTests.swift */; };
+		69B1599D2C502A22009720B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B1599C2C502A22009720B7 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		695583F82C5028C600A35AE3 /* Clima_Weather_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima_Weather_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		695583FB2C5028C600A35AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		695583FD2C5028C600A35AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		695583FF2C5028C600A35AE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		695584022C5028C600A35AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		695584042C5028C700A35AE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		695584072C5028C700A35AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		695584182C5028C700A35AE3 /* Clima_Weather_IOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Clima_Weather_IOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6955841C2C5028C700A35AE3 /* Clima_Weather_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clima_Weather_IOSUITests.swift; sourceTree = "<group>"; };
 		6955841E2C5028C700A35AE3 /* Clima_Weather_IOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clima_Weather_IOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		69B1599C2C502A22009720B7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +99,9 @@
 		695583FA2C5028C600A35AE3 /* Clima_Weather_IOS */ = {
 			isa = PBXGroup;
 			children = (
+				69B1599C2C502A22009720B7 /* ViewController.swift */,
 				695583FB2C5028C600A35AE3 /* AppDelegate.swift */,
 				695583FD2C5028C600A35AE3 /* SceneDelegate.swift */,
-				695583FF2C5028C600A35AE3 /* ViewController.swift */,
 				695584012C5028C600A35AE3 /* Main.storyboard */,
 				695584042C5028C700A35AE3 /* Assets.xcassets */,
 				695584062C5028C700A35AE3 /* LaunchScreen.storyboard */,
@@ -258,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				695584002C5028C600A35AE3 /* ViewController.swift in Sources */,
+				69B1599D2C502A22009720B7 /* ViewController.swift in Sources */,
 				695583FC2C5028C600A35AE3 /* AppDelegate.swift in Sources */,
 				695583FE2C5028C600A35AE3 /* SceneDelegate.swift in Sources */,
 			);
@@ -450,6 +450,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +479,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

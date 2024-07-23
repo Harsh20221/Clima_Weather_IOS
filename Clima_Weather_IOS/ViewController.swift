@@ -1,14 +1,19 @@
 //
 //  ViewController.swift
-//  Clima_Weather_IOS
+//  Clima
 //
-//  Created by Harsh Kumar on 23/07/24.
+//  Created by Angela Yu on 01/09/2019.
+//  Copyright © 2019 App Brewery. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class WeatherViewController: UIViewController {
 
+    @IBOutlet weak var conditionImageView: UIImageView!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

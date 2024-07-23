@@ -1,13 +1,14 @@
 //
 //  AppDelegate.swift
-//  Clima_Weather_IOS
+//  Clima
 //
-//  Created by Harsh Kumar on 23/07/24.
+//  Created by Angela Yu on 01/09/2019.
+//  Copyright © 2019 App Brewery. All rights reserved.
 //
 
 import UIKit
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
