@@ -22,11 +22,16 @@ class WeatherViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet var SearchButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        Searchpressed.delegate=self;
 
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
     }
 
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        Searchpressed.text=""
+    }
+    
 }
 
