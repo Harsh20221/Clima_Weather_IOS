@@ -8,17 +8,25 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController , UITextFieldDelegate{
 
+    @IBOutlet var Searchpressed: UITextField!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     
+    @IBAction func SearchButton(_ sender: UIButton) {
+        Searchpressed.endEditing(true)
+        
+    }
+    @IBOutlet var SearchButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 
 }
 
