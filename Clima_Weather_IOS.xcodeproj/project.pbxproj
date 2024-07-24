@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6903DB892C516C1800B92332 /* dark_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6903DB882C516C1800B92332 /* dark_background.pdf */; };
 		695583FC2C5028C600A35AE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695583FB2C5028C600A35AE3 /* AppDelegate.swift */; };
 		695583FE2C5028C600A35AE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695583FD2C5028C600A35AE3 /* SceneDelegate.swift */; };
 		695584032C5028C600A35AE3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 695584022C5028C600A35AE3 /* Base */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6903DB872C516C0F00B92332 /* light_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = light_background.pdf; path = "../../../../Downloads/Clima-iOS13-master/Clima/light_background.pdf"; sourceTree = "<group>"; };
+		6903DB882C516C1800B92332 /* dark_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = dark_background.pdf; path = "../../../../Downloads/Clima-iOS13-master/Clima/dark_background.pdf"; sourceTree = "<group>"; };
 		695583F82C5028C600A35AE3 /* Clima_Weather_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima_Weather_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		695583FB2C5028C600A35AE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		695583FD2C5028C600A35AE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 		695583FA2C5028C600A35AE3 /* Clima_Weather_IOS */ = {
 			isa = PBXGroup;
 			children = (
+				6903DB882C516C1800B92332 /* dark_background.pdf */,
+				6903DB872C516C0F00B92332 /* light_background.pdf */,
 				69B1599C2C502A22009720B7 /* ViewController.swift */,
 				695583FB2C5028C600A35AE3 /* AppDelegate.swift */,
 				695583FD2C5028C600A35AE3 /* SceneDelegate.swift */,
@@ -231,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6903DB892C516C1800B92332 /* dark_background.pdf in Resources */,
 				695584052C5028C700A35AE3 /* Assets.xcassets in Resources */,
 				695584082C5028C700A35AE3 /* Base in Resources */,
 				695584032C5028C600A35AE3 /* Base in Resources */,
