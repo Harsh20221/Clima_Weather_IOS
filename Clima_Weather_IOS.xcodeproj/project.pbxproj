@@ -17,6 +17,7 @@
 		6955841D2C5028C700A35AE3 /* Clima_Weather_IOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6955841C2C5028C700A35AE3 /* Clima_Weather_IOSUITests.swift */; };
 		6955841F2C5028C700A35AE3 /* Clima_Weather_IOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6955841E2C5028C700A35AE3 /* Clima_Weather_IOSUITestsLaunchTests.swift */; };
 		69B1599D2C502A22009720B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B1599C2C502A22009720B7 /* ViewController.swift */; };
+		69C149D82C51E63000A6EF9E /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C149D72C51E63000A6EF9E /* WeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		6955841C2C5028C700A35AE3 /* Clima_Weather_IOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clima_Weather_IOSUITests.swift; sourceTree = "<group>"; };
 		6955841E2C5028C700A35AE3 /* Clima_Weather_IOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clima_Weather_IOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		69B1599C2C502A22009720B7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		69C149D72C51E63000A6EF9E /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				6903DB882C516C1800B92332 /* dark_background.pdf */,
+				69C149D72C51E63000A6EF9E /* WeatherManager.swift */,
 				6903DB872C516C0F00B92332 /* light_background.pdf */,
 				69B1599C2C502A22009720B7 /* ViewController.swift */,
 				695583FB2C5028C600A35AE3 /* AppDelegate.swift */,
@@ -266,6 +269,7 @@
 			files = (
 				69B1599D2C502A22009720B7 /* ViewController.swift in Sources */,
 				695583FC2C5028C600A35AE3 /* AppDelegate.swift in Sources */,
+				69C149D82C51E63000A6EF9E /* WeatherManager.swift in Sources */,
 				695583FE2C5028C600A35AE3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

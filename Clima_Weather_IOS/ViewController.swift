@@ -9,7 +9,7 @@
 import UIKit
 
 class WeatherViewController: UIViewController , UITextFieldDelegate{
-    
+    var weathermanager=WeatherManager() //!!!Make sure to assign a file's class in a variable before passing value to it or using value or pwrdorming any operations in it .
     @IBOutlet var Searchpressed: UITextField!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -38,6 +38,10 @@ class WeatherViewController: UIViewController , UITextFieldDelegate{
         
         
         func textFieldDidEndEditing(_ textField: UITextField) {
+            if let city=textField.text{ ///Here we are passing the cityname to the weather manager's fetchweather
+                weathermanager.fetchweather(cityname: city)
+            }
+            
             Searchpressed.text=""
         }
         
