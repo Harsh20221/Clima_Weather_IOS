@@ -42,9 +42,12 @@ class WeatherManager { ///The city name is passed from the view controller
         let decoder = JSONDecoder()
         do {//////!!!VERY IMP TO CHOOSE datatype in the below line Weatherdata.self , (choose the one Weatherdata with the p logo )and in the from: Parameter  we choose this very own function's argument weatherdata mentioned in line 38 as function argument
             let decodedData = try decoder.decode(WeatherData.self, from:weatherData)
-            print(decodedData.name) ////Print name or any other parsed info here
-            let id=decodedData.weather[0].id //This is how you call the id
-            print (id);
+            let name=decodedData.name ////??? Here WE ARE EXTRACTING IMPORTANT WEATHER NAME AND OTHER PROPERTIES FROM THE DECODER AND STORING THEM TO PASS THEM BELOW IN THE WEATHER MODEL FILE
+            ///we are doing all this passing values and all to rganise our code efficently among different files
+            let id=decodedData.weather[0].id
+            let temp=decodedData.main.temp
+            let weather=WeatherModel(conditionId:id, cityName:name, temperature:temp) ///Passing above values in the model
+            
             
         } catch {
             print(error);
