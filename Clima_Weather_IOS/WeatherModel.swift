@@ -13,7 +13,7 @@ struct WeatherModel {
     let cityName:String
     let temperature:Double
     var temperatureString:String{
-        return String(format:"%.02f",temperature) ///This is also a computed property which will compute (format the given temperature upt 2 decimal places only )
+        return String(format:"%.01f",temperature) ///This is also a computed property which will compute (format the given temperature upt 1 decimal places only )
     }
     var conditionName:String{ ///This is an example of a computed property which will compute property based on given data , We are passing condition id here so that It can calculate the correct id and then process the data as per the [processed ID
         switch conditionId{
