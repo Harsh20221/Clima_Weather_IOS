@@ -31,12 +31,9 @@ class WeatherManager { ///The city name is passed from the view controller
                     self.parseJson(weatherData: safedata)
                 }
             }
-            task.resume()
+            task.resume() ///!!!This will start the fetch task make sure it's inside the if let url else the url data will not be fetched
         }
     }
-    
-    
-    
     /////!!!!!!!MAKE SURE THIS ParseJson  FUNCTION IS NOT A PART of above Perforem request function , shouldn't be nested
     func parseJson(weatherData:Data) {
         let decoder = JSONDecoder()
