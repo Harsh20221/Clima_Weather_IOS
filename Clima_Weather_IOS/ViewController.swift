@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController , UITextFieldDelegate{
+class WeatherViewController: UIViewController , UITextFieldDelegate,WeatherManagerDelegate{
     var weathermanager=WeatherManager() //!!!Make sure to assign a file's class in a variable before passing value to it or using value or pwrdorming any operations in it .
     @IBOutlet var Searchpressed: UITextField!
     @IBOutlet weak var conditionImageView: UIImageView!
@@ -22,7 +22,8 @@ class WeatherViewController: UIViewController , UITextFieldDelegate{
     @IBOutlet var SearchButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        Searchpressed.delegate=self;
+        Searchpressed.delegate=self; ///Initialising the delegates
+        weathermanager.delegate=self;///Initialising the delegates
         
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -44,8 +45,10 @@ class WeatherViewController: UIViewController , UITextFieldDelegate{
             
             Searchpressed.text="" //Will empty the text field ones weather is submitted
         }
-    
-     
+    func didUpdateWeather(weather:WeatherModel){
+        print(weather.temperature);
+    }
+        
     }
     
 
