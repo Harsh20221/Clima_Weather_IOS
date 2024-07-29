@@ -48,6 +48,7 @@ class WeatherManager { ///The city name is passed from the view controller
             let temp=decodedData.main.temp
             let weather=WeatherModel(conditionId:id, cityName:name, temperature:temp) ///Passing above values in the model
             print(weather.temperatureString); ///Now after passing the data into the Weather model we can easily fetc the data like this bu just typing weather.(property that we need to fetch )
+            print(weather.conditionName)
             
         } catch {
             print(error);
