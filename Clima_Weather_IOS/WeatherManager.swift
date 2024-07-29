@@ -7,7 +7,7 @@
 
 import Foundation
 class WeatherManager { ///The city name is passed from the view controller
-
+    
     let weatherUrl="https://api.openweathermap.org/data/2.5/weather?&appid=e0f1170c7a75cac9683b5e257967f5c6&units=metric"
     
     func fetchweather(cityname:String){
@@ -17,7 +17,7 @@ class WeatherManager { ///The city name is passed from the view controller
     
     
     func performrequest(urlString:String){ //Here the url will be processed and url session will execute
-       if let url = URL(string: urlString) {
+        if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task =  session.dataTask(with:url) {
                 ( data, response, error) in ///*Here we are using a closure
@@ -34,21 +34,45 @@ class WeatherManager { ///The city name is passed from the view controller
             task.resume()
         }
     }
-       
-        
-        
-        /////!!!!!!!MAKE SURE THIS ParseJson  FUNCTION IS NOT A PART of above Perforem request function , shouldn't be nested
-        func parseJson(weatherData:Data) {
-            let decoder = JSONDecoder()
-            do {//////!!!VERY IMP TO CHOOSE datatype in the below line Weatherdata.self , (choose the one Weatherdata with the p logo )and in the from: Parameter  we choose this very own function's argument weatherdata mentioned in line 38 as function argument
-                let decodedData = try decoder.decode(WeatherData.self, from:weatherData)
-                print(decodedData.name)
-            } catch {
-                print(error);
-            }
+    
+    
+    
+    /////!!!!!!!MAKE SURE THIS ParseJson  FUNCTION IS NOT A PART of above Perforem request function , shouldn't be nested
+    func parseJson(weatherData:Data) {
+        let decoder = JSONDecoder()
+        do {//////!!!VERY IMP TO CHOOSE datatype in the below line Weatherdata.self , (choose the one Weatherdata with the p logo )and in the from: Parameter  we choose this very own function's argument weatherdata mentioned in line 38 as function argument
+            let decodedData = try decoder.decode(WeatherData.self, from:weatherData)
+            print(decodedData.name) ////Print name or any other parsed info here
+            let id=decodedData.weather[0].id //This is how you call the id
+            print (id);
             
+        } catch {
+            print(error);
         }
         
-        
-        
     }
+    
+    func getconditionname(weatherid:Int)->String{
+        switch weatherid {
+        case 200...232:
+            return "cloud.bolt" ///Here we are printing the Icon to be Displayed as per the current weather of the city 
+        case 300...321:
+            return "cloud.drizzle"
+        case 500...531:
+            return "cloud.rain"
+        case 600...622:
+            return "cloud.snow"
+        case 701...781:
+            return "cloud.fog"
+        case 800:
+            return "sun.max"
+        case 801...804:
+            return "cloud.bolt"
+        default:
+            return "cloud"
+        }
+    }
+    
+    
+    
+}
