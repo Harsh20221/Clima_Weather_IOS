@@ -3,7 +3,7 @@
 //  Clima_Weather_IOS
 //
 //  Created by Harsh Kumar on 25/07/24.
-//
+//****THIS FILE WILL BE RESPONSIBLE TO  FETCH DATA FROM OPEN WEATHER AND PROCESS IT
 
 import Foundation
 class WeatherManager { ///The city name is passed from the view controller
@@ -34,10 +34,10 @@ class WeatherManager { ///The city name is passed from the view controller
         task.resume()}
         
         
-        /////MAKE SURE THIS ParseJson  FUNCTION IS NOT A PART of above Perforem request function , shouldn't be nested
+        /////!!!!!!!MAKE SURE THIS ParseJson  FUNCTION IS NOT A PART of above Perforem request function , shouldn't be nested
         func parseJson(weatherData:Data) {
             let decoder = JSONDecoder()
-            do {//////!!!VERY IMP TO CHOOSE datatype in the below line Weatherdata.self , choose the one Weatherdata with the p logo and in the from we choose this very own function's argument weatherdata mentioned in line 38 as function argument
+            do {//////!!!VERY IMP TO CHOOSE datatype in the below line Weatherdata.self , (choose the one Weatherdata with the p logo )and in the from: Parameter  we choose this very own function's argument weatherdata mentioned in line 38 as function argument
                 let decodedData = try decoder.decode(WeatherData.self, from:weatherData)
             } catch {
                 print(error);

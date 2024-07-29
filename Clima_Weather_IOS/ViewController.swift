@@ -39,10 +39,10 @@ class WeatherViewController: UIViewController , UITextFieldDelegate{
         
         func textFieldDidEndEditing(_ textField: UITextField) {
             if let city=textField.text{ ///Here we are passing the cityname to the weather manager's fetchweather
-                weathermanager.fetchweather(cityname: city)
+                weathermanager.fetchweather(cityname: city)///Will trigger WeatherManager to fetch data from openweather's API
             }
             
-            Searchpressed.text=""
+            Searchpressed.text="" //Will empty the text field ones weather is submitted
         }
     
      
