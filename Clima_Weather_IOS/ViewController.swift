@@ -9,6 +9,7 @@
 import UIKit
 
 class WeatherViewController: UIViewController , UITextFieldDelegate,WeatherManagerDelegate{
+    
     var weathermanager=WeatherManager() //!!!Make sure to assign a file's class in a variable before passing value to it or using value or pwrdorming any operations in it .
     @IBOutlet var Searchpressed: UITextField!
     @IBOutlet weak var conditionImageView: UIImageView!
@@ -45,10 +46,17 @@ class WeatherViewController: UIViewController , UITextFieldDelegate,WeatherManag
             
             Searchpressed.text="" //Will empty the text field ones weather is submitted
         }
-    func didUpdateWeather(weather:WeatherModel){
-        print(weather.temperature);
+    func didUpdateWeather(_ weathermanager:WeatherManager,weather:WeatherModel){
+        DispatchQueue.main.async{
+            self.temperatureLabel.text=weather.temperatureString //!Do not forget self here
+            self.cityLabel.text=weather.cityName
+            self.conditionImageView.image=UIImage(systemName: weather.conditionName)//Use this UI image form to update the weather and in the parameter add the conditionName , we have already defined the swwitch case for conditon name in weather model
+        }
+    }
+    func didfailwitherror(error: any Error) {
+        print(error)
     }
         
-    }
+}
     
 
