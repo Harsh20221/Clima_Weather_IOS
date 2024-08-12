@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController , UITextFieldDelegate,WeatherManagerDelegate{
+class WeatherViewController: UIViewController , WeatherManagerDelegate{
     
     var weathermanager=WeatherManager() //!!!Make sure to assign a file's class in a variable before passing value to it or using value or pwrdorming any operations in it .
     @IBOutlet var Searchpressed: UITextField!
@@ -16,10 +16,7 @@ class WeatherViewController: UIViewController , UITextFieldDelegate,WeatherManag
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     
-    @IBAction func SearchButton(_ sender: UIButton) {
-        Searchpressed.endEditing(true)
-        
-    }
+   
     @IBOutlet var SearchButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +24,30 @@ class WeatherViewController: UIViewController , UITextFieldDelegate,WeatherManag
         weathermanager.delegate=self;///Initialising the delegates
         
     }
+  
+    func didUpdateWeather(_ weathermanager:WeatherManager,weather:WeatherModel){
+        DispatchQueue.main.async{
+            self.temperatureLabel.text=weather.temperatureString //!Do not forget self here
+            self.cityLabel.text=weather.cityName
+            self.conditionImageView.image=UIImage(systemName: weather.conditionName)//Use this UI image form to update the weather and in the parameter add the conditionName , we have already defined the swwitch case for conditon name in weather model
+        }
+    }
+    func didfailwitherror(error: any Error) {
+        print(error)
+    }
+}
+
+extension WeatherViewController:UITextFieldDelegate{ ///Ones You have Succesfully Adopted this Delegate here , You Can Delete the One On the Top  that you declared while creating the WeatherViewController Class
+        @IBAction func SearchButton(_ sender: UIButton) {
+        Searchpressed.endEditing(true)
+        
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if (textField.text != "")  { ///Define empty conditiion like this rathere than texttField.text != "   " , make sure you keep track of correct spaces while using != statement 
+        if (textField.text != "")  { ///Define empty conditiion like this rathere than texttField.text != "   " , make sure you keep track of correct spaces while using != statement
             return true}
         else {textField.placeholder="Please Enter something!!!! "
             return false }}
@@ -46,17 +61,7 @@ class WeatherViewController: UIViewController , UITextFieldDelegate,WeatherManag
             
             Searchpressed.text="" //Will empty the text field ones weather is submitted
         }
-    func didUpdateWeather(_ weathermanager:WeatherManager,weather:WeatherModel){
-        DispatchQueue.main.async{
-            self.temperatureLabel.text=weather.temperatureString //!Do not forget self here
-            self.cityLabel.text=weather.cityName
-            self.conditionImageView.image=UIImage(systemName: weather.conditionName)//Use this UI image form to update the weather and in the parameter add the conditionName , we have already defined the swwitch case for conditon name in weather model
-        }
-    }
-    func didfailwitherror(error: any Error) {
-        print(error)
-    }
-        
-}
     
+}
+
 
