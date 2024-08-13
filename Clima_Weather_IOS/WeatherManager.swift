@@ -6,6 +6,7 @@
 //****THIS FILE WILL BE RESPONSIBLE TO  FETCH DATA FROM OPEN WEATHER AND PROCESS IT
 
 import Foundation
+import CoreLocation
 protocol WeatherManagerDelegate { //Creeting the protocol to ensure only those functions will manage weather that has update weather implimented 
     func didUpdateWeather(_ weatherManager:WeatherManager,weather:WeatherModel) //Then we will call the update weather to update the weather
     func didfailwitherror(error:Error);
@@ -18,8 +19,15 @@ struct WeatherManager { ///The city name is passed from the view controller
     
     func fetchweather(cityname:String){
         let urlString="\(weatherUrl)&q=\(cityname)"
-        performrequest(urlString: urlString)
+      performrequest(urlString: urlString)
     }
+    
+    func fetchweather(latitude:CLLocationDegrees,longitude:CLLocationDegrees){
+        let urlString = "\(weatherUrl)&lat=\(latitude)&lon=\(longitude)"
+       performrequest(urlString: urlString)//This will go throug the same process to update the weather
+    
+    }
+    
     
     
     func performrequest(urlString:String){ //Here the url will be processed and url session will execute
@@ -51,8 +59,9 @@ struct WeatherManager { ///The city name is passed from the view controller
             let id=decodedData.weather[0].id
             let temp=decodedData.main.temp
             let weather=WeatherModel(conditionId:id, cityName:name, temperature:temp) ///Passing above values in the model
-            print(weather.temperatureString); ///Now after passing the data into the Weather model we can easily fetc the data like this bu just typing weather.(property that we need to fetch )
-            print(weather.conditionName)
+            /// print(weather.temperatureString)
+            print(weather.temperatureString)
+            print(weather.cityName)
             return weather
         } catch {
             delegate?.didfailwitherror(error: Error.self as! Error);
